@@ -10,6 +10,7 @@ Face detection using Haar feature-based cascade classifier for frontal face.
 - numpy
 - pillow
 
-To install these requirements run the following command.
+To install these requirements run the following command
+
 ``` pip install -r requirements.txt ```
 
