@@ -1,5 +1,6 @@
 # Face Recognition sytem using openCV
-The goal here is to use webcam or video feed to recognize faces.
+Python implementation of LBPH, for face recognition of a user from database.
+Face detection using Haar feature-based cascade classifier for frontal face.
 
 ## Requirements
 - python 3.5.2
