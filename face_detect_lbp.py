@@ -8,7 +8,6 @@ Created on Thu Mar 29 01:36:57 2018
 import numpy as np
 import cv2
 import argparse
-import imutils
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--img", type = str, required=True)
