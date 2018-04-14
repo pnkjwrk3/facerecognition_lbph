@@ -5,14 +5,20 @@ Created on Tue Mar 27 15:13:21 2018
 @author: Pankaj
 """
 
+
+#This will create a file named trainingData.yml in the model folder, which is trained on the images from dataset folder.
+
 import os
 import cv2
 import numpy as np 
 from PIL import Image
+
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 path = 'dataset'
+
 if not os.path.exists('./model'):
     os.makedirs('./model')
+ 
 def getImagesWithID(path):
   imagePaths = [os.path.join(path,f) for f in os.listdir(path)]
   faces = []
