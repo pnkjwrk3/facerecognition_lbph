@@ -10,16 +10,22 @@ import sqlite3
 import numpy as np
 import os
 
+# connect database
 conn = sqlite3.connect('usersdatabase.db')
+c = conn.cursor()
+
 if not os.path.exists('./dataset'):
     os.makedirs('./dataset')
-c = conn.cursor()
+
+# load cascade classifier file
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
 cap = cv2.VideoCapture(0)
 u_name = input("Enter your name: ")
 c.execute('INSERT INTO users (name) VALUES (?)', (u_name,))
 uid = c.lastrowid
 sampleNum = 0
+
 while True:
   _,img = cap.read()
   gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -31,8 +37,9 @@ while True:
     cv2.waitKey(100)
   cv2.imshow('img',img)
   cv2.waitKey(1);
-  if sampleNum > 25:
+  if sampleNum > 25: #capture 25 images of the face from webcam
     break
+
 cap.release()
 conn.commit()
 conn.close()
