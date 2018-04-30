@@ -1,4 +1,4 @@
 opencv-python
-OpenCV-contrib
+opencv-contrib-python
 numpy
 Pillow
